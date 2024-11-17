@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 import proj1 from "../../public/images/projects/image1.jpg";
 import proj2 from "../../public/images/projects/image2.jpg";
-import proj3 from "../../public/images/projects/image3.jpg";
+import proj3 from "../../public/images/projects/image3.png";
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   return (
