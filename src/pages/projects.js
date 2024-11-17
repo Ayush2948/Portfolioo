@@ -155,12 +155,12 @@ const projects = () => {
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                title="A Smart Chatbot Using AWS AI Services"
-                summary="Work in Progress "
-                link=""
+                title="CryptPat - A Crypto Currency Exchange Platform"
+                summary="An application where we can connect our crypto wallet and exchange crypto"
+                link="https://crypto-exchange-two-rho.vercel.app/"
                 type=""
                 img={proj3}
-                github=""
+                github="https://github.com/Ayush2948/Crypto-Exchange/"
               />
             </div>
           </div>
