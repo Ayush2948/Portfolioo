@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
 
-const Details = ({ type, time, place, info }) => {
+const Details = ({ type, time, place, info, link }) => {
   const ref = useRef(null);
   return (
     <li
@@ -16,10 +16,12 @@ const Details = ({ type, time, place, info }) => {
         transition={{ duration: 0.5, type: "spring" }}
       >
         <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
-          {type}
+          <a href={link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+            {type}
+          </a>
         </h3>
         <span className="capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm">
-          {time} | {place}
+          {time} {place && `| ${place}`}
         </span>
         <p className="font-medium w-full md:text-sm">{info}</p>
       </motion.div>
@@ -45,18 +47,19 @@ const Education = () => {
           md:w-[2px] md:left-[30px] xs:left-[20px]"
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-          
           <Details
-            type="modernizing Application Deployment and Scaling With Terraform "
+            type="Modernizing Application Deployment and Scaling With Terraform"
             time="Nov 2025"
             place="Algo Analytics"
-            info="Modernizing the deployment and scaling of a three-tier architecture on AWS through infrastructure automation using Terraform ."
+            info="Modernizing the deployment and scaling of a three-tier architecture on AWS through infrastructure automation using Terraform."
+            link="https://blog.algoanalytics.com/2023/11/13/modernizing-application-deployment-and-scaling-with-terraform/"
           />
           <Details
             type="Simplified Application Deployment using Docker"
             time="Jan 2025"
             place=""
             info="The blog highlights Docker's role in simplifying application deployment by using containers, provides a quick guide on Dockerizing a basic Node.js application for consistent and efficient deployment."
+            link="https://medium.com/@ayush.patil2021/simplified-application-deployment-embracing-the-magic-of-docker-cc818fa7d83d"
           />
         </ul>
       </div>
