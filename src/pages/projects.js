@@ -10,7 +10,7 @@ import proj2 from "../../public/images/projects/image2.jpg";
 import proj3 from "../../public/images/projects/image3.png";
 import proj4 from "../../public/images/projects/image4.png";
 import proj5 from "../../public/images/projects/image5.png";
-import proj6 from "../../public/images/projects/image6.jpg"; // You'll need to add this image to your project
+import proj6 from "../../public/images/projects/image6.png"; // You'll need to add this image to your project
 
 const Project = ({ title, type, img, link, github }) => {
   return (
