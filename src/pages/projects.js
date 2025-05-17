@@ -10,32 +10,33 @@ import proj2 from "../../public/images/projects/image2.jpg";
 import proj3 from "../../public/images/projects/image3.png";
 import proj4 from "../../public/images/projects/image4.png";
 import proj5 from "../../public/images/projects/image5.png";
-import proj6 from "../../public/images/projects/image6.png"; // You'll need to add this image to your project
+import proj6 from "../../public/images/projects/image6.jpg"; // You'll need to add this image to your project
 
 const Project = ({ title, type, img, link, github }) => {
   return (
     <article
-      className="group w-full flex flex-col items-center justify-center rounded-2xl 
+      className="group w-full flex flex-col items-center justify-between rounded-2xl 
         border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4
-        transition-all duration-300 hover:shadow-xl"
+        transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
     >
       <div
         className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark 
-      rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]"
+      rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]
+      transition-all duration-300"
       />
       <Link
-        className="w-full cursor-pointer overflow-hidden rounded-lg"
+        className="w-full cursor-pointer overflow-hidden rounded-lg h-64" // Fixed height
         href={link}
         target="_blank"
       >
         <Image 
           src={img} 
           alt={title} 
-          className="w-full h-auto transition-transform duration-300 group-hover:scale-105" 
+          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" 
         />
       </Link>
-      <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-xl dark:text-primaryDark lg:text-lg md:text-base">
+      <div className="w-full flex flex-col items-start justify-between mt-4 h-40"> {/* Fixed height container */}
+        <span className="text-primary font-medium text-xl dark:text-primaryDark lg:text-lg md:text-base animate-fadeIn">
           {type}
         </span>
         <Link
@@ -43,11 +44,11 @@ const Project = ({ title, type, img, link, github }) => {
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">
+          <h2 className="my-2 w-full text-left text-2xl font-bold lg:text-xl h-14 line-clamp-2"> {/* Fixed height with line clamping */}
             {title}
           </h2>
         </Link>
-        <div className="w-full mt-2 flex items-center justify-between">
+        <div className="w-full mt-auto flex items-center justify-between">
           <Link
             className="text-lg font-semibold underline md:text-base transition-colors hover:text-primary dark:hover:text-primaryDark"
             href={link}
@@ -67,6 +68,67 @@ const Project = ({ title, type, img, link, github }) => {
     </article>
   );
 };
+
+// Add animation keyframes
+const keyframes = `
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.staggered-item:nth-child(1) { animation-delay: 0.1s; }
+.staggered-item:nth-child(2) { animation-delay: 0.2s; }
+.staggered-item:nth-child(3) { animation-delay: 0.3s; }
+.staggered-item:nth-child(4) { animation-delay: 0.4s; }
+.staggered-item:nth-child(5) { animation-delay: 0.5s; }
+.staggered-item:nth-child(6) { animation-delay: 0.6s; }
+.staggered-item:nth-child(7) { animation-delay: 0.7s; }
+.staggered-item:nth-child(8) { animation-delay: 0.8s; }
+.staggered-item:nth-child(9) { animation-delay: 0.9s; }
+.staggered-item:nth-child(10) { animation-delay: 1s; }
+`;
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState("All");
