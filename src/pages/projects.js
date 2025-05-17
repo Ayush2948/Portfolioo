@@ -8,6 +8,8 @@ import React from "react";
 import proj1 from "../../public/images/projects/image1.jpg";
 import proj2 from "../../public/images/projects/image2.jpg";
 import proj3 from "../../public/images/projects/image3.png";
+import proj4 from "../../public/images/projects/image4.png";
+import proj5 from "../../public/images/projects/image5.png";
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   return (
@@ -135,32 +137,52 @@ const projects = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
             <div className="col-span-12">
               <FeaturedProject
-                title="Application Deployment & Scaling With Terraform"
-                summary="Modernizing the deployment and scaling of a three-tier architecture on AWS through infrastructure automation using Terraform ."
+                title="AWS Automation with Terraform"
+                summary="Automated and modernized AWS infrastructure provisioning, improving setup efficiency, scalability, and security using Terraform."
                 link="https://github.com/Ayush2948/Terraform-Architecture"
-                type=""
+                type="DevOps Project"
                 img={proj1}
-                github="https://github.com/Ayush2948/Terraform-Architecture   "
+                github="https://github.com/Ayush2948/Terraform-Architecture"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                title="Library Management System Using Java Swing"
-                summary="An application is a desktop application designed to help the user to maintain and organize the library."
+                title="Library Management System"
+                summary="Java-based system to streamline book handling processes, with advanced search and user-friendly UI."
                 link="https://github.com/Ayush2948/Library-Management-System"
-                type=""
+                type="Java Project"
                 img={proj2}
                 github="https://github.com/Ayush2948/Library-Management-System"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                title="CryptPat - A Crypto Currency Exchange Platform"
-                summary="An application where we can connect our crypto wallet and exchange crypto"
-                link="https://crypto-exchange-two-rho.vercel.app/"
-                type=""
+                title="LayerEdge - Layer 2 Crypto Exchange"
+                summary="Decentralized exchange using Polygon CDK and Layer 2 scaling. Includes smart contracts, on-chain transactions, and wallet integration."
+                link="https://layer-edge-kbub.vercel.app/"
+                type="Blockchain Project"
                 img={proj3}
-                github="https://github.com/Ayush2948/Crypto-Exchange/"
+                github="https://github.com/Ayush2948"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                title="TermsBuddy - Terms & Conditions Summarizer"
+                summary="Browser extension that summarizes Privacy Policies and Terms & Conditions using OpenAI, with real-time text extraction and secure backend."
+                link="https://github.com/Ayush2948/TermsBuddy"
+                type="AI Tool"
+                img={proj4}
+                github="https://github.com/Ayush2948/TermsBuddy"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                title="CryptPay - Crypto Wallet Exchange"
+                summary="A crypto wallet exchange platform where users can connect wallets and securely exchange cryptocurrencies."
+                link="https://crypto-exchange-two-rho.vercel.app/"
+                type="Web3 App"
+                img={proj5}
+                github="https://github.com/Ayush2948/Crypto-Exchange"
               />
             </div>
           </div>
